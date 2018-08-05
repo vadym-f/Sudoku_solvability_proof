@@ -1,0 +1,89 @@
+Initial position:
+0 0 0|6 0 0|4 0 0
+7 0 0|0 0 3|6 0 0
+0 0 0|0 9 1|0 8 0
+-
+0 0 0|0 0 0|0 0 0
+0 5 0|1 8 0|0 0 3
+0 0 0|3 0 6|0 4 5
+-
+0 4 0|2 0 0|0 6 0
+9 0 3|0 0 0|0 0 0
+0 2 0|0 0 0|1 0 0
+-
+Solution:
+5 8 1|6 7 2|4 3 9
+7 9 2|8 4 3|6 5 1
+3 6 4|5 9 1|7 8 2
+-
+4 3 8|9 5 7|2 1 6
+2 5 6|1 8 4|9 7 3
+1 7 9|3 2 6|8 4 5
+-
+8 4 5|2 1 9|3 6 7
+9 1 3|7 6 8|5 2 4
+6 2 7|4 3 5|1 9 8
+-
+Consistent
+Number of constraints: 432
+(enter) Call to r1cs_ppzksnark_generator   	[             ]	(465920.2053s x0.00 from start)
+  (enter) Call to r1cs_constraint_system::swap_AB_if_beneficial	[             ]	(465920.2055s x0.00 from start)
+    (enter) Estimate densities                 	[             ]	(465920.2055s x0.00 from start)
+      * Non-zero A-count (estimate): 245
+      * Non-zero B-count (estimate): 82
+    (leave) Estimate densities                 	[0.0000s x0.97]	(465920.2055s x0.00 from start)
+    Swap is not beneficial, not performing
+  (leave) Call to r1cs_constraint_system::swap_AB_if_beneficial	[0.0001s x0.92]	(465920.2056s x0.00 from start)
+  (enter) Call to r1cs_to_qap_instance_map_with_evaluation	[             ]	(465920.2056s x0.00 from start)
+    * Selected domain: basic_radix2
+    (enter) Compute evaluations of A, B, C, H at t	[             ]	(465920.2056s x0.00 from start)
+    (leave) Compute evaluations of A, B, C, H at t	[0.0021s x0.99]	(465920.2077s x0.00 from start)
+  (leave) Call to r1cs_to_qap_instance_map_with_evaluation	[0.0021s x0.99]	(465920.2077s x0.00 from start)
+  * QAP number of variables: 352
+  * QAP pre degree: 432
+  * QAP degree: 512
+  * QAP number of input variables: 0
+  (enter) Compute query densities            	[             ]	(465920.2077s x0.00 from start)
+  (leave) Compute query densities            	[0.0000s x0.98]	(465920.2077s x0.00 from start)
+  Choosing window size 8 for 2145 elements
+  Choosing window size 5 for 82 elements
+  * G1 window: 8
+  * G2 window: 5
+  (enter) Generating G1 multiexp table       	[             ]	(465920.2079s x0.00 from start)
+  (leave) Generating G1 multiexp table       	[0.0101s x1.00]	(465920.2179s x0.00 from start)
+  (enter) Generating G2 multiexp table       	[             ]	(465920.2180s x0.00 from start)
+  (leave) Generating G2 multiexp table       	[0.0098s x1.00]	(465920.2277s x0.00 from start)
+  (enter) Generate R1CS proving key          	[             ]	(465920.2278s x0.00 from start)
+    (enter) Generate knowledge commitments     	[             ]	(465920.2278s x0.00 from start)
+      (enter) Compute the A-query                	[             ]	(465920.2278s x0.00 from start)
+      Non-zero coordinate count: 245/354 (69.21%)
+      (leave) Compute the A-query                	[0.0174s x1.00]	(465920.2451s x0.00 from start)
+      (enter) Compute the B-query                	[             ]	(465920.2452s x0.00 from start)
+      Non-zero coordinate count: 83/354 (23.45%)
+      (leave) Compute the B-query                	[0.0241s x1.00]	(465920.2693s x0.00 from start)
+      (enter) Compute the C-query                	[             ]	(465920.2693s x0.00 from start)
+      Non-zero coordinate count: 353/354 (99.72%)
+      (leave) Compute the C-query                	[0.0239s x1.00]	(465920.2932s x0.00 from start)
+      (enter) Compute the H-query                	[             ]	(465920.2932s x0.00 from start)
+      . DONE!
+      (leave) Compute the H-query                	[0.0171s x1.00]	(465920.3103s x0.00 from start)
+      (enter) Compute the K-query                	[             ]	(465920.3103s x0.00 from start)
+      . DONE!
+      (leave) Compute the K-query                	[0.0131s x1.00]	(465920.3235s x0.00 from start)
+    (leave) Generate knowledge commitments     	[0.0957s x1.00]	(465920.3235s x0.00 from start)
+  (leave) Generate R1CS proving key          	[0.0958s x1.00]	(465920.3235s x0.00 from start)
+  (enter) Generate R1CS verification key     	[             ]	(465920.3235s x0.00 from start)
+    (enter) Encode IC query for R1CS verification key	[             ]	(465920.3314s x0.00 from start)
+       DONE!
+    (leave) Encode IC query for R1CS verification key	[0.0004s x0.98]	(465920.3318s x0.00 from start)
+  (leave) Generate R1CS verification key     	[0.0083s x1.00]	(465920.3318s x0.00 from start)
+(leave) Call to r1cs_ppzksnark_generator   	[0.1266s x1.00]	(465920.3318s x0.00 from start)
+* G1 elements in PK: 2639
+* Non-zero G1 elements in PK: 2148
+* G2 elements in PK: 354
+* Non-zero G2 elements in PK: 83
+* PK size in bits: 633571
+* G1 elements in VK: 2
+* G2 elements in VK: 5
+* VK size in bits: 3310
+SAT

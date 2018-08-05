@@ -5,6 +5,7 @@
 #include "relations/constraint_satisfaction_problems/r1cs/r1cs.hpp"
 #include "common/default_types/r1cs_ppzksnark_pp.hpp"
 #include "gadgetlib1/protoboard.hpp"
+#include "zk_proof_systems/ppzksnark/r1cs_ppzksnark/r1cs_ppzksnark.hpp"
 
 using namespace libsnark;
 using namespace std;
@@ -168,6 +169,8 @@ int main() {
   // 5*81+3*9 = 432
   cout << "Number of constraints: " << pb.get_constraint_system().num_constraints() << endl;
 
+  // common/default_types/r1cs_ppzksnark_pp.hpp:typedef default_ec_pp default_r1cs_ppzksnark_pp;
+  r1cs_ppzksnark_keypair<default_r1cs_ppzksnark_pp> keypair = r1cs_ppzksnark_generator<default_r1cs_ppzksnark_pp>(pb.get_constraint_system());
   // --------------- witness assignment
   pb.lc_val(s) = 17;
   FieldT prod_sv, partial; // , fvs=1
@@ -212,7 +215,12 @@ int main() {
       pb.val(pblocks[z + bz*N*N]) = partial;
     }
   } // blocks
-
+/*
+  r1cs_ppzksnark_primary_input<default_r1cs_ppzksnark_pp> primary_input;
+  r1cs_ppzksnark_auxiliary_input<default_r1cs_ppzksnark_pp> auxiliary_input;
+  r1cs_ppzksnark_proof<default_r1cs_ppzksnark_pp> proof = r1cs_ppzksnark_prover<default_r1cs_ppzksnark_pp>(keypair.pk, primary_input, auxiliary_input, pb.get_constraint_system());
+  bool is_ok = r1cs_ppzksnark_verifier_weak_IC(keypair.vk, primary_input, proof);
+*/
   // --------------- 
   if(pb.is_satisfied()) {
     cout << "SAT" << endl;
