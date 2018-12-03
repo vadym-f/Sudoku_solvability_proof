@@ -14,16 +14,20 @@ payment can be claimed with a hash preimage,
 and that preimages is verified to be a valid encryption key for a valid solution to the given Sudoku puzzle.
 
 This verification idea could be best demonstrated with a few photos that are "worth a thousand words":
+
 [Sudoku verification idea](http://www.wisdom.weizmann.ac.il/~naor/PAPERS/SUDOKU_DEMO/)
 
-Actual solution verification is implemented as producing and verifying a zk-SNARK proof.
+Actual solution verification was implemented as producing and verifying a zk-SNARK proof.
 
 An alternative verification is introduced with this project,
 starting from the idea of polynomial set representation.
 We expect a circuit of reduced complexity, in terms of multiplication gates count.
 
 Polynomial set representation was introduced in the context of communication-efficient
-"set reconciliation" problem solved by Minsky, Trachtenberg, and Zippel, 2003.
+"set reconciliation" problem solved by Minsky, Trachtenberg, and Zippel, 2003:
+
+[Set reconciliation sourcecode](https://github.com/trachten/cpisync)
+
 It was extended into bivariate polynomial representation of graphs,
 leading to a Schnorr-like proof systems for graph isomorhism and hamiltonicity with "large" non-binary challenges.
 
