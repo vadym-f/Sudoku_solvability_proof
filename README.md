@@ -1,9 +1,10 @@
 # Private verification of Sudoku solution
 
 Sudoku solution verification was introduced in the context of atomic Bitcoin transction:
-https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/
-https://github.com/zcash-hackworks/pay-to-sudoku
-https://www.youtube.com/watch?v=bD-xTQ0_2nA
+[Bitcoincore article](https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/)
+[Financial Crypto 2016 talk](https://github.com/zcash-hackworks/pay-to-sudoku)
+[QED-it meetup](https://www.youtube.com/watch?v=bD-xTQ0_2nA)
+...
 Informally, a chicken-and-egg problem was resolved this way:
 if solution is sent first then why pay for it, and
 if payment is made first then nothing prevents from sending just random bytes.
@@ -12,7 +13,8 @@ lock can be opened with a hash preimage,
 and that preimages is verified to be a valid symmetric key for an encrypted valid solution of the given Sudoku puzzle.
 
 This verification idea could be best demonstrated with a few photos that are "worth a thousand words":
-http://www.wisdom.weizmann.ac.il/~naor/PAPERS/SUDOKU_DEMO/
+[Sudoku verification idea](http://www.wisdom.weizmann.ac.il/~naor/PAPERS/SUDOKU_DEMO/)
+...
 Actual solution verification is implemented as producing and verifying a zk-SNARK proof.
 
 An alternative verification is introduced with this project,
